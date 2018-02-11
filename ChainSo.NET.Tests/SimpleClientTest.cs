@@ -13,7 +13,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getnetworkinfo_returns_result()
         {
-            SimpleClient client = new SimpleClient(true);
+            SimpleClient client = new SimpleClient();
             NetworkInfo network = client.GetNetworkInfo(Network.BitcoinTest);
             Assert.IsNotNull(network);
             Assert.IsTrue(network.Status == Consts.Success);
@@ -22,7 +22,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getprices_returns_result()
         {
-            SimpleClient client = new SimpleClient(true);
+            SimpleClient client = new SimpleClient();
             Price prices = client.GetPrices(Network.Bitcoin, "EUR");
             Assert.IsNotNull(prices);
             Assert.IsTrue(prices.Status == Consts.Success);
@@ -31,7 +31,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getprices_with_bad_address_returns_empty_list()
         {
-            SimpleClient client = new SimpleClient(true);
+            SimpleClient client = new SimpleClient();
             Price prices = client.GetPrices(Network.Bitcoin, Consts.Wrong);
             Assert.IsNotNull(prices);
             Assert.IsTrue(prices.Status == Consts.Success);
@@ -46,7 +46,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getshortaddress_returns_result()
         {
-            SimpleClient client = new SimpleClient(true);
+            SimpleClient client = new SimpleClient();
             ShortAddress address = client.GetShortAddress(Network.Doge, "DSfnDweXHwQmUYhprkNpmGo3nuvKepF851");
             Assert.IsTrue(address != null && address.Status == Consts.Success);
         }
@@ -54,7 +54,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getshortaddress_with_bad_address_throws_exception()
         {
-            SimpleClient client = new SimpleClient(true);
+            SimpleClient client = new SimpleClient();
             ExceptionWithMessage<CommonError> typedException = null;
             try
             {

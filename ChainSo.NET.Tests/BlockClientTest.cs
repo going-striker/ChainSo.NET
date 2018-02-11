@@ -13,7 +13,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getblockhash_returns_result_with_proxy()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             BlockHash hash = client.GetBlockHash(Network.Doge, 200000);
             Assert.IsNotNull(hash);
             Assert.IsTrue(hash.Status == Consts.Success);
@@ -23,7 +23,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getblock_height_returns_result_with_proxy()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             Block block = client.GetBlock(Network.Doge, 200000);
             Assert.IsNotNull(block);
             Assert.IsTrue(block.Status == Consts.Success);
@@ -34,7 +34,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getblock_hash_returns_result_with_proxy()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             Block block = client.GetBlock(Network.Doge,
                 "092fd3e76db5ff35fbfefe48d5c53ca26e799f0654a4036ddd5fd78de77418c2");
             Assert.IsNotNull(block);
@@ -46,7 +46,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getblockdisplaydata_height_returns_result_with_proxy()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             BlockDisplayData block = client.GetDisplayData(Network.Doge, 200000);
             Assert.IsNotNull(block);
             Assert.IsTrue(block.Status == Consts.Success);
@@ -58,7 +58,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getblockdisplaydata_hash_returns_result_with_proxy()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             BlockDisplayData block = client.GetDisplayData(Network.Doge,
                 "092fd3e76db5ff35fbfefe48d5c53ca26e799f0654a4036ddd5fd78de77418c2");
             Assert.IsNotNull(block);
@@ -74,7 +74,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getblockhash_with_bad_height_throws_exception()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             ExceptionWithMessage<BlockHashError> typedException = null;
             try
             {
@@ -92,7 +92,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getblock_height_with_bad_height_throws_exception()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             ExceptionWithMessage<BlockError> typedException = null;
             try
             {
@@ -110,7 +110,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getblock_hash_with_bad_height_throws_exception()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             ExceptionWithMessage<BlockError> typedException = null;
             try
             {
@@ -128,7 +128,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getblockdisplaydata_height_with_bad_height_throws_exception()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             ExceptionWithMessage<CommonError> typedException = null;
             try
             {
@@ -147,7 +147,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getblockdisplaydata_hash_with_bad_height_throws_exception()
         {
-            BlockClient client = new BlockClient(true);
+            BlockClient client = new BlockClient();
             ExceptionWithMessage<CommonError> typedException = null;
             try
             {

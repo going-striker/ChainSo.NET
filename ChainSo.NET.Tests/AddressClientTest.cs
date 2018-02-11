@@ -13,7 +13,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getbalance_returns_result_with_proxy()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             Balance result = client.GetBalance(Network.Doge, "DFundmtrigzA6E25Swr2pRe4Eb79bGP8G1", 500);
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -23,7 +23,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getreceivedvalue_returns_result_with_proxy()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             ReceivedValue result = client.GetReceivedValue(Network.Doge, "DFundmtrigzA6E25Swr2pRe4Eb79bGP8G1");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -33,7 +33,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getspentvalue_returns_result_with_proxy()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             SpentValue result = client.GetSpentValue(Network.Doge, "DFundmtrigzA6E25Swr2pRe4Eb79bGP8G1");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -43,7 +43,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getunspenttx_returns_result_with_proxy()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             OutputTx result = client.GetUnspentTx(Network.Doge, "DRapidDiBYggT1zdrELnVhNDqyAHn89cRi", "e83d147c3bcd87c6efd5270896a179f6ecb1de8b8c8cc324645c5a14129baf8c");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -53,7 +53,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getreceivedtx_returns_result_with_proxy()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             OutputTx result = client.GetReceivedTx(Network.Doge, "DRapidDiBYggT1zdrELnVhNDqyAHn89cRi", "e83d147c3bcd87c6efd5270896a179f6ecb1de8b8c8cc324645c5a14129baf8c");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -63,7 +63,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getspenttx_returns_result_with_proxy()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             InputTx result = client.GetSpentTx(Network.Doge, "DRapidDiBYggT1zdrELnVhNDqyAHn89cRi", "e83d147c3bcd87c6efd5270896a179f6ecb1de8b8c8cc324645c5a14129baf8c");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -73,7 +73,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_isaddressvalid_returns_result_with_proxy()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             AddressValid result = client.IsAddressValid(Network.Doge, "DM7Yo7YqPtgMsGgphX9RAZFXFhu6Kd6JTT");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -84,7 +84,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getdisplaydata_returns_result_with_proxy()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             AddressDisplayData result = client.GetDisplayData(Network.Doge, "DM7Yo7YqPtgMsGgphX9RAZFXFhu6Kd6JTT");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -97,7 +97,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getbalance_with_bad_address_throws_exception()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             ExceptionWithMessage<AddressError> typedException = null;
             try
             {
@@ -116,7 +116,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getreceivedvalue_with_bad_address_throws_exception()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             ExceptionWithMessage<AddressReceivedValueError> typedException = null;
             try
             {
@@ -135,7 +135,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getspentvalue_with_bad_address_throws_exception()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             ExceptionWithMessage<AddressSentValueError> typedException = null;
             try
             {
@@ -154,7 +154,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getunspenttx_with_bad_address_throws_exception()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             ExceptionWithMessage<AddressAfterTxError> typedException = null;
             try
             {
@@ -173,7 +173,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getreceivedtx_with_bad_address_throws_exception()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             ExceptionWithMessage<AddressAfterTxError> typedException = null;
             try
             {
@@ -192,7 +192,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getspenttx_with_bad_address_throws_exception()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             ExceptionWithMessage<AddressAfterTxError> typedException = null;
             try
             {
@@ -211,7 +211,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_isaddressvalid_with_bad_address_returns_false()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             AddressValid result = client.IsAddressValid(Network.Doge, Consts.Wrong);
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -221,7 +221,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getaddressdisplaydata_hash_with_bad_address_returns_fail()
         {
-            AddressClient client = new AddressClient(true);
+            AddressClient client = new AddressClient();
             AddressDisplayData result = client.GetDisplayData(Network.Doge, Consts.Wrong);
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Fail);

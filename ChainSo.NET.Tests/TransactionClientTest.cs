@@ -17,7 +17,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getconfidence_returns_result()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             Confidence result = client.GetConfidence(Network.Bitcoin, "871265cc6efa69a749282321b19a22d3ed6cccff1995d1ce34323a6006b943eb");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -27,7 +27,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_gettxinputs_returns_result()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             TxInputs result = client.GetTxInputs(Network.Doge, "6f47f0b2e1ec762698a9b62fa23b98881b03d052c9d8cb1d16bb0b04eb3b7c5b");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -37,7 +37,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_gettxoutputs_returns_result()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             TxOutputs result = client.GetTxOutputs(Network.Doge, "6f47f0b2e1ec762698a9b62fa23b98881b03d052c9d8cb1d16bb0b04eb3b7c5b");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -47,7 +47,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_gettx_returns_result()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             Tx result = client.GetTx(Network.Doge, "6f47f0b2e1ec762698a9b62fa23b98881b03d052c9d8cb1d16bb0b04eb3b7c5b");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -58,7 +58,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_istxconfirmed_returns_result()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             TxConfirmed result = client.IsTxConfirmed(Network.Doge, "6f47f0b2e1ec762698a9b62fa23b98881b03d052c9d8cb1d16bb0b04eb3b7c5b");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -70,7 +70,7 @@ namespace ChainSo.NET.Tests
         public void simple_synchronous_call_istxspent_returns_result()
         {
             int outputNum = 0;
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             TxOutputSpent result = client.IsTxOutputSpent(Network.Doge, "6f47f0b2e1ec762698a9b62fa23b98881b03d052c9d8cb1d16bb0b04eb3b7c5b", outputNum);
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -82,7 +82,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void simple_synchronous_call_getdisplaydata_returns_result()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             TransactionDisplayData result = client.GetDisplayData(Network.Doge, "6f47f0b2e1ec762698a9b62fa23b98881b03d052c9d8cb1d16bb0b04eb3b7c5b");
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Status == Consts.Success);
@@ -100,7 +100,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getconfidence_with_bad_address_throws_exception()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             ExceptionWithMessage<TxidError> typedException = null;
             try
             {
@@ -119,7 +119,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_gettxinputs_with_bad_address_throws_exception()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             ExceptionWithMessage<TxidInputError> typedException = null;
             try
             {
@@ -139,7 +139,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_gettxoutputs_with_bad_address_throws_exception()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             ExceptionWithMessage<TxidOutputError> typedException = null;
             try
             {
@@ -159,7 +159,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_gettx_with_bad_address_throws_exception()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             ExceptionWithMessage<TxidError> typedException = null;
             try
             {
@@ -178,7 +178,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_istxconfirmed_with_bad_address_throws_exception()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             ExceptionWithMessage<TxidError> typedException = null;
             try
             {
@@ -198,7 +198,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_istxoutputspent_with_bad_address_throws_exception()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             ExceptionWithMessage<TxidOutputError> typedException = null;
             try
             {
@@ -219,7 +219,7 @@ namespace ChainSo.NET.Tests
         [TestMethod]
         public void should_simple_synchronous_call_getblockdisplaydata_hash_with_bad_height_throws_exception()
         {
-            TransactionClient client = new TransactionClient(true);
+            TransactionClient client = new TransactionClient();
             Exception ex = null;
             try
             {
