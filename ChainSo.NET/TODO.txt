@@ -1,0 +1,9 @@
+﻿- Factorize / clean generated model classes
+
+- NuGet management
+
+- Add more unit tests
+
+- Test for "Send Tx"
+
+- Investigate UI Deadlock potential issues with async / await if any
